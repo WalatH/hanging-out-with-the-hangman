@@ -5,8 +5,10 @@ words = ["Informatica", "Informatiekunde", "Spelletje", "Aardigheidje", "Scholie
 
 rng = (random.choice(words))
 number_of_letters = len(rng) - rng.count(" ")
-for letter in rng: 
-    print("-")
+
+space = len(rng)
+underscore = ("_ " * space)
+print(underscore)
 
 print(number_of_letters)
 print(rng)
