@@ -1,10 +1,14 @@
 import random
 import os
 
+isGameRunning = True
+
 def pressEnter():
     input("Press enter to continue...")
     os.system('clear')
 
+lives = 6
+    
 print("Howdy partner, welcome to the gallows. You tryin' to hang out with me?")    
 pressEnter()
 
@@ -14,7 +18,7 @@ rng = (random.choice(words))
 number_of_letters = len(rng)
 
 spaces = len(rng)
-underscore = ("_ " * spaces)
+underscore = ("_" * spaces)
 print(underscore)
 print(rng)
 
@@ -25,6 +29,10 @@ for i in range(len(rng)):
     else:
         print ("Incorrect",letter)
 
+while isGameRunning == True:
+    if lives == 0:
+        pass
+    
 
 print(number_of_letters)
 print(rng)
