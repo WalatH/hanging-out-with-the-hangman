@@ -1,6 +1,13 @@
 import random
 import os
-print("Howdy partner, welcome to the gallows. You tryin' to hang out with me?")
+from time import sleep
+
+def pressEnter():
+    input("Press enter to continue...")
+    os.system('clear')
+
+print("Howdy partner, welcome to the gallows. You tryin' to hang out with me?")    
+pressEnter()
 
 words = ["Informatica", "Informatiekunde", "Spelletje", "Aardigheidje", "Scholier", "Fotografie", "Waardebepaling", "Specialiteit", "Verzekering", "Universiteit", "Heesterpark"]
 
@@ -11,7 +18,7 @@ space = len(rng)
 underscore = ("_ " * space)
 print(underscore)
 
-for i in range(1, 9):
+for i in range(5):
     letter = input("Guess a letter")
     if letter in rng:
         print ("Correct",letter)
