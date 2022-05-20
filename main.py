@@ -1,6 +1,5 @@
 import random
 import os
-from time import sleep
 
 def pressEnter():
     input("Press enter to continue...")
@@ -14,17 +13,18 @@ words = ["Informatica", "Informatiekunde", "Spelletje", "Aardigheidje", "Scholie
 rng = (random.choice(words))
 number_of_letters = len(rng)
 
-space = len(rng)
-underscore = ("_ " * space)
+spaces = len(rng)
+underscore = ("_ " * spaces)
 print(underscore)
+print(rng)
 
-for i in range(5):
-    letter = input("Guess a letter")
+for i in range(len(rng)):
+    letter = input("Guess a letter ")
     if letter in rng:
         print ("Correct",letter)
     else:
         print ("Incorrect",letter)
 
-      
+
 print(number_of_letters)
 print(rng)
