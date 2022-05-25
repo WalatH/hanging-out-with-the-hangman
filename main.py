@@ -16,11 +16,13 @@ words = ["Informatica", "Informatiekunde", "Spelletje", "Aardigheidje", "Scholie
 
 rng = (random.choice(words))
 number_of_letters = len(rng)
+guessedWord = list(rng)
 
 spaces = len(rng)
-underscore = ("_" * spaces)
+underscore = ("_ " * spaces)
 print(underscore)
 print(rng)
+print(guessedWord)
 
 for i in range(len(rng)):
     letter = input("Guess a letter ")
