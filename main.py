@@ -7,12 +7,21 @@ def pressEnter():
     input("Press enter to continue...")
     os.system('clear')
 
-lives = 6
-    
+def game():
+    guesses = 0
+    rng = (random.choice(words))
+    number_of_letters = len(rng)
+    guessedWord = list(rng)
+    underscore = ("_ " * spaces)
+    wrong_list = []
+
+
+
+
 print("Howdy partner, welcome to the gallows. You tryin' to hang out with me?")    
 pressEnter()
 
-words = ["Informatica", "Informatiekunde", "Spelletje", "Aardigheidje", "Scholier", "Fotografie", "Waardebepaling", "Specialiteit", "Verzekering", "Universiteit", "Heesterpark"]
+words = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterpark"]
 
 rng = (random.choice(words))
 number_of_letters = len(rng)
@@ -24,17 +33,5 @@ print(underscore)
 print(rng)
 print(guessedWord)
 
-for i in range(len(rng)):
-    letter = input("Guess a letter ")
-    if letter in rng:
-        print ("Correct",letter)
-    else:
-        print ("Incorrect",letter)
 
-while isGameRunning == True:
-    if lives == 0:
-        pass
-    
-
-print(number_of_letters)
-print(rng)
+#while isGameRunning == True:
