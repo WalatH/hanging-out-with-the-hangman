@@ -18,24 +18,26 @@ def pressEnter():
   input("Press enter to continue...")
   os.system('clear')
 
+def hangMan():
+  guesses = 0					
+  word = selectWord()				
+  word_list = list(word)	
+  blanks = "_"*len(word)	
+  blanks_list = list(blanks) 
+  new_blanks_list = list(blanks)
+  guess_list = []
+
+  print("Howdy partner, welcome to the gallows. You tryin' to hang out with me?")
+  pressEnter()
+  print("Welcome to Hangman, made by Mikail and Walat. Have fun and remember kids do not cheat or else I will hunt you down... Anyways have fun!")
+  print("\n")
+  name = input("Enter your name: ")
+  print("\n\nYour name is " + name + "? Are you a 100% sure? Alright, good luck.\n\n\n")
+  pressEnter()
+  print ("LETS DO THIS!\n\n")
+  hangman(guesses, word)
+  print ("\n")
+  print ("" + ' '.join(blanks_list))
+  print ("\n")
+  print ("Guess a letter.\n\n")
   
-
-
-
-print("Howdy partner, welcome to the gallows. You tryin' to hang out with me?")    
-pressEnter()
-
-words = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterpark"]
-
-rng = (random.choice(words))
-number_of_letters = len(rng)
-guessedWord = list(rng)
-
-spaces = len(rng)
-underscore = ("_ " * spaces)
-print(underscore)
-print(rng)
-print(guessedWord)
-
-
-#while isGameRunning == True:
