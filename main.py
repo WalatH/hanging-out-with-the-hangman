@@ -1,20 +1,24 @@
 import random
 import os
 
-isGameRunning = True
 
+def selectWord():
+  file = open('WordsGame')
+  words = file.readlines() 
+  myword = 'a'
+  while len(myword) < 4:
+    myword = random.choice(words)
+    myword = str(myword).strip('[]')
+    myword = str(myword).strip("''")
+    myword = str(myword).strip("\n")
+    myword = str(myword).strip("\r")
+  myword = myword.lower()
+  return myword
 def pressEnter():
-    input("Press enter to continue...")
-    os.system('clear')
+  input("Press enter to continue...")
+  os.system('clear')
 
-def game():
-    guesses = 0
-    rng = (random.choice(words))
-    number_of_letters = len(rng)
-    guessedWord = list(rng)
-    underscore = ("_ " * spaces)
-    wrong_list = []
-
+  
 
 
 
