@@ -48,3 +48,15 @@ def hangMan():
   		
   		if len(guess) > 1:
   				print ("\n\nSTOP CHEATING DO YOU WANT ME TO HUNT YOU DOWN?! Enter ONE letter at time!       PLEASE.\n\n")
+      elif guess == "":
+  				print ("\n\nDon't you want to play? Enter one letter at a time.\n\n")
+  		elif guess in guess_list:
+  				print ("\n\nYou already guessed that letter! DONT YOU REMEMBER?! Here is what you've already guessed!:\n\n")
+  				print (' '.join(guess_list))
+  		else:
+  				guess_list.append(guess)
+  				i = 0
+  				while i < len(word):
+  						if guess == word[i]:
+  								new_blanks_list[i] = word_list[i]
+  						i = i+1
