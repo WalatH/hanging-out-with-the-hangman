@@ -40,4 +40,11 @@ def hangMan():
   print ("" + ' '.join(blanks_list))
   print ("\n")
   print ("Guess a letter.\n\n")
+
+  while guesses < 6:
   
+  		guess = str(input(" >"))
+  		guess = guess.lower()
+  		
+  		if len(guess) > 1:
+  				print ("\n\nSTOP CHEATING DO YOU WANT ME TO HUNT YOU DOWN?! Enter ONE letter at time!       PLEASE.\n\n")
