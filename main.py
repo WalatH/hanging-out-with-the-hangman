@@ -1,7 +1,74 @@
 import random
 import os
 
-
+def hangman(guesses, wd):
+		if (guesses == 0):
+				print ("_________                6 lives left")
+				print ("|	 |")
+				print ("|")
+				print ("|")
+				print ("|")
+				print ("|")
+				print ("|________")
+		elif (guesses == 1):
+				print ("_________                5 lives left")
+				print ("|	 |")
+				print ("|	 O")
+				print ("|")
+				print ("|")
+				print ("|")
+				print ("|________")
+		elif (guesses == 2):
+				print ("_________                4 lives left")
+				print ("|	 |")
+				print ("|	 O")
+				print ("|	 |")
+				print ("|")
+				print ("|")
+				print ("|________")
+		elif (guesses == 3):
+				print ("_________                3 lives left")
+				print ("|	 |")
+				print ("|	 O")
+				print ("|	/|")
+				print ("|")
+				print ("|")
+				print ("|________")
+		elif (guesses == 4):
+				print ("_________                2 lives left")
+				print ("|	 |")
+				print ("|	 O")
+				print ("|	/|\ ")
+				print ("|")
+				print ("|")
+				print ("|________")
+		elif (guesses == 5):
+				print ("_________                1 life left")
+				print ("|	 |")
+				print ("|	 O")
+				print ("|	/|\ ")
+				print ("|	/")
+				print ("|")
+				print ("|________")
+		elif (guesses == 6):
+				print ("_________                0 lives left")
+				print ("|	 |")
+				print ("|	 O")
+				print ("|	/|\ ")
+				print ("|	/ \ ")
+				print ("|	")
+				print ("|________")
+				print ("\n")
+				print ("The word was %s." %wd)
+				print ("\n")
+				print ("\n'You have killed him... How do you feel? He had a family, and you decide to just kill him? Shame on you! Next time you should try your best!'")
+				print ("\nWould you like to play again, type ja if you WANT to play again and type nee if you DON'T want  to play again.")
+				again = str(input("> "))
+				again = again.lower()
+				if again == "ja":
+				  hangMan()
+				return
+      
 def selectWord():
   file = open('WordsGame')
   words = file.readlines() 
@@ -74,3 +141,18 @@ def hangMan():
   						
   						blanks_list = new_blanks_list[:]
   						print (' '.join(blanks_list))
+            
+              if word_list == blanks_list:
+  						  print ("\n\nYOU WIN! YOU SAVED ME, I CAN'T THANK YOU ENOUGH\n\n")
+  						  print ("\n\n")
+  						  print ("\n\nWould you like to play again?\n\n")
+  						  print ("\n\nType ja if you want to play again and type nee if you DON'T want to play again\n\n")
+  						  again = str(input("> "))
+  						  if again == "nee":
+  						    hangMan()
+  						  exit()
+
+  						else:
+  								print ("\n\nGreat guess! Guess another letter!\n\n")
+												
+hangMan()
