@@ -60,3 +60,17 @@ def hangMan():
   						if guess == word[i]:
   								new_blanks_list[i] = word_list[i]
   						i = i+1
+          
+          if new_blanks_list == blanks_list:
+  						print ("\n\nYour letter isn't in this word.\n\n")
+  						guesses = guesses + 1
+  						hangman(guesses, word)
+  						
+  						if guesses < 6:
+  								print ("\n\nTry again.\n\n")
+  								print (' '.join(blanks_list))
+  						
+  				elif word_list != blanks_list:
+  						
+  						blanks_list = new_blanks_list[:]
+  						print (' '.join(blanks_list))
