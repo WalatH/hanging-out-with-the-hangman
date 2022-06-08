@@ -1,6 +1,13 @@
 import random
 import os
 
+def quit():
+    os.system('clear')
+    print("Aww man, you are gonna leave me hanging?")
+    print("\n")
+    pressEnter()
+    print("Goodbye, partner. It was fun hanging out with you.")
+
 def hangman(guesses, wd):
 		if (guesses == 0):
 				print ("_________                6 lives left")
@@ -110,49 +117,49 @@ def hangMan():
 
   while guesses < 6:
   
-  		guess = str(input(" >"))
-  		guess = guess.lower()
+    guess = str(input(" >"))
+    guess = guess.lower()
   		
-  		if len(guess) > 1:
-  				print ("\n\nSTOP CHEATING DO YOU WANT ME TO HUNT YOU DOWN?! Enter ONE letter at time!       PLEASE.\n\n")
-      elif guess == "":
-  				print ("\n\nDon't you want to play? Enter one letter at a time.\n\n")
-  		elif guess in guess_list:
-  				print ("\n\nYou already guessed that letter! DONT YOU REMEMBER?! Here is what you've already guessed!:\n\n")
-  				print (' '.join(guess_list))
-  		else:
-  				guess_list.append(guess)
-  				i = 0
-  				while i < len(word):
-  						if guess == word[i]:
-  								new_blanks_list[i] = word_list[i]
-  						i = i+1
-          
-          if new_blanks_list == blanks_list:
-  						print ("\n\nYour letter isn't in this word.\n\n")
-  						guesses = guesses + 1
-  						hangman(guesses, word)
-  						
-  						if guesses < 6:
-  								print ("\n\nTry again.\n\n")
-  								print (' '.join(blanks_list))
-  						
-  				elif word_list != blanks_list:
-  						
-  						blanks_list = new_blanks_list[:]
-  						print (' '.join(blanks_list))
-            
-              if word_list == blanks_list:
-  						  print ("\n\nYOU WIN! YOU SAVED ME, I CAN'T THANK YOU ENOUGH\n\n")
-  						  print ("\n\n")
-  						  print ("\n\nWould you like to play again?\n\n")
-  						  print ("\n\nType ja if you want to play again and type nee if you DON'T want to play again\n\n")
-  						  again = str(input("> "))
-  						  if again == "nee":
-  						    hangMan()
-  						  exit()
+    if len(guess) > 1:
+        print ("\n\nSTOP CHEATING DO YOU WANT ME TO HUNT YOU DOWN?! Enter ONE letter at time!       PLEASE.\n\n")
+    elif guess == "":
+        print ("\n\nDon't you want to play? Enter one letter at a time.\n\n")
+    elif guess in guess_list:
+        print ("\n\nYou already guessed that letter! DONT YOU REMEMBER?! Here is what you've already guessed!:\n\n")
+        print (' '.join(guess_list))
+    else:
+            guess_list.append(guess)
+            i = 0
+            while i < len(word):
+                    if guess == word[i]:
+                            new_blanks_list[i] = word_list[i]
+                    i = i+1
+      
+            if new_blanks_list == blanks_list:
+                    print ("\n\nYour letter isn't in this word.\n\n")
+                    guesses = guesses + 1
+                    hangman(guesses, word)
+    
+                    if guesses < 6:
+                            print ("\n\nTry again.\n\n")
+                            print (' '.join(blanks_list))   
+    
+            elif word_list != blanks_list:
+        
+                blanks_list = new_blanks_list[:]
+                print (' '.join(blanks_list))
+        
+                if word_list == blanks_list:
+                    print ("\n\nYOU WIN! YOU SAVED ME, I CAN'T THANK YOUENOUGH")
+                    print ("\n\n")
+                    print ("\n\nWould you like to play again?\n\n")
+                    print ("\n\nType ja if you want to play again and type nee if you DON'T want to play again\n\n")
+                    again = str(input("> "))
+                    if again == "nee":
+                        quit()
+                        
 
-  						else:
-  								print ("\n\nGreat guess! Guess another letter!\n\n")
-												
+            
+                    else: print ("\n\nGreat guess! Guess another letter!\n\n")
+
 hangMan()
